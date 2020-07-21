@@ -20,7 +20,7 @@ pipeline {
       stage(' Code Testing') {
          steps {
            
-            bat "mvn test"
+            bat "mvn -Dmaven.test.failure.ignore=true clean test"
          }
 
       }
@@ -29,7 +29,7 @@ pipeline {
          steps {
            
             // To run Maven on a Windows agent, use
-           bat "mvn package"
+           bat "mvn -Dmaven.test.failure.ignore=true clean package"
          }
 
       }
