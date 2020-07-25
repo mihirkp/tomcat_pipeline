@@ -25,6 +25,14 @@ pipeline {
 
       }
       
+       stage(' Code Compilation') {
+         steps {
+           
+            bat "mvn compile"
+         }
+
+      }
+      
       stage(' Code Build') {
          steps {
            
